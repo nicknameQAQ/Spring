@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>员工列表</title>
+</head>
+<body>
+<h2>员工列表</h2>
+
+<p><a th:href="@{/add}">新增员工</a></p>
+
+<table border="1" cellpadding="8">
+    <tr>
+        <th>员工编号</th>
+        <th>姓名</th>
+        <th>入职日期</th>
+        <th>工资</th>
+        <th>操作</th>
+    </tr>
+    <tr th:each="emp : ${empList}">
+        <td th:text="${emp.empno}"></td>
+        <td th:text="${emp.ename}"></td>
+        <td th:text="${emp.hiredate}"></td>
+        <td th:text="${emp.sal}"></td>
+        <td>
+            <a th:href="@{/edit(empno=${emp.empno})}">编辑</a>
+            <a th:href="@{/delete(empno=${emp.empno})}"
+               onclick="return confirm('确定删除这条员工记录吗？')">删除</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>新增员工</title>
+</head>
+<body>
+<h2>新增员工</h2>
+
+<form th:action="@{/save}" method="post">
+    员工编号：<input name="empno" required><br><br>
+    姓名：<input name="ename" required><br><br>
+    入职日期：<input name="hiredate" placeholder="yyyy-MM-dd" required><br><br>
+    工资：<input name="sal" type="number" step="0.01" required><br><br>
+    <button type="submit">保存</button>
+    <a th:href="@{/list}">返回</a>
+</form>
+</body>
+</html>

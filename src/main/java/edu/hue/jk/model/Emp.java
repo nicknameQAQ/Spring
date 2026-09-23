@@ -12,4 +12,5 @@ public class Emp {
     private Integer empno;
     private String ename;
     private Date hiredate;
+    private Double sal;
 }
